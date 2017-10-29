@@ -26,9 +26,9 @@ void setup()
 void ring()
 {
   digitalWrite(11,HIGH);
-  delay(1);
+  delay(1000);
   digitalWrite(11,LOW);
-  delay(1); 
+  delay(1000); 
 }
 
 void loop()
