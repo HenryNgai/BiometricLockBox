@@ -17,7 +17,7 @@
 	
 */
 
-#include "FPS_GT511C3.h"
+#include "././FPS_GT511C3.h"
 #include "SoftwareSerial.h"
 
 /*-------------------- HARDWARE HOOKUP with 5V Arduino --------------------
