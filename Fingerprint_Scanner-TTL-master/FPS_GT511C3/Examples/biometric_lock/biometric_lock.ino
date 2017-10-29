@@ -23,6 +23,14 @@ void setup()
   fps.SetLED(true);   //turn on LED so fps can see fingerprint
 }
 
+void ring()
+{
+  digitalWrite(11,HIGH);
+  delay(1);
+  digitalWrite(11,LOW);
+  delay(1); 
+}
+
 void loop()
 {
   // Identify fingerprint test
