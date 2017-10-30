@@ -5,7 +5,7 @@
 // FPS (TX) is connected to pin 4 (Arduino's Software RX)
 // FPS (RX) is connected through a converter to pin 5 (Arduino's Software TX)
 FPS_GT511C3 fps(4, 5); // (Arduino SS_RX = pin 4, Arduino SS_TX = pin 5)
-
+int lockPin = 13;
 /*If using another Arduino microcontroller, try commenting out line 51 and
 uncommenting line 60 due to the limitations listed in the
 library's note => https://www.arduino.cc/en/Reference/softwareSerial . Do
@@ -21,6 +21,17 @@ void setup()
   delay(100);
   fps.Open();         //send serial command to initialize fps
   fps.SetLED(true);   //turn on LED so fps can see fingerprint
+  pinMode(lockPin, OUTPUT);
+}
+
+void lockUnlock(boolean lock){
+  if(lock){
+    digitalWrite(lockPin, LOW);
+    delay(1000);
+  }else{
+    digitalWrite(lockPin, HIGH);
+    delay(1000);
+  }
 }
 
 void ring()
