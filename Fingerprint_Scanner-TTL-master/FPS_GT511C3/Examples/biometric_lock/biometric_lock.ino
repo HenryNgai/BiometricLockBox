@@ -26,10 +26,10 @@ void setup()
 
 void lockUnlock(boolean lock){
   if(lock){
-    digitalWrite(lockPin, LOW);
+    digitalWrite(lockPin, LOW); // Low voltage to unlock
     delay(1000);
   }else{
-    digitalWrite(lockPin, HIGH);
+    digitalWrite(lockPin, HIGH); // High voltage to lock
     delay(1000);
   }
 }
@@ -58,10 +58,12 @@ void loop()
     {//if the fingerprint matches, provide the matching template ID
       Serial.print("Verified ID:");
       Serial.println(id);
+      lockUnlock(false);
     }
     else
     {//if unable to recognize
       Serial.println("Finger not found");
+      lockUnlock(true); 
     }
   }
   else
