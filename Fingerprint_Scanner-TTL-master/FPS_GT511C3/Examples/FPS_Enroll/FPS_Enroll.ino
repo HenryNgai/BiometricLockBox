@@ -95,6 +95,7 @@ void Enroll()
 	Serial.println(enrollid);
 	while(fps.IsPressFinger() == false) delay(100);
 	bool bret = fps.CaptureFinger(true);
+  Serial.println(bret);
 	int iret = 0;
 	if (bret != false)
 	{
