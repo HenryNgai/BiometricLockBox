@@ -30,6 +30,7 @@ void setup()
   pinMode(lockPin2, OUTPUT);
 }
 
+<<<<<<< HEAD
 void lock(boolean stat){
   if(stat){
     digitalWrite(8, LOW);
@@ -39,6 +40,15 @@ void lock(boolean stat){
     digitalWrite(8, HIGH);
     digitalWrite(9, HIGH);
 
+=======
+void lockUnlock(boolean lock){
+  if(lock){
+    digitalWrite(lockPin, LOW); // Low voltage to unlock
+    delay(1000);
+  }else{
+    digitalWrite(lockPin, HIGH); // High voltage to lock
+    delay(1000);
+>>>>>>> ba4045c8c89fc37a6420623674f84bfe5efc73b5
   }
 }
 
@@ -80,16 +90,25 @@ void loop()
     {//if the fingerprint matches, provide the matching template ID
       Serial.print("Verified ID:");
       Serial.println(id);
+<<<<<<< HEAD
       lock(false);
       LED(false);
       Serial.print("Reached cause yo ass print works");
+=======
+      lockUnlock(false);
+>>>>>>> ba4045c8c89fc37a6420623674f84bfe5efc73b5
     }
     
     else
     {//if unable to recognize
+<<<<<<< HEAD
       lock(true);
       LED(true);
       Serial.print("Locked cause false fingerprint");
+=======
+      Serial.println("Finger not found");
+      lockUnlock(true); 
+>>>>>>> ba4045c8c89fc37a6420623674f84bfe5efc73b5
     }
     
   }
