@@ -28,6 +28,9 @@ void setup()
   fps.SetLED(true);   //turn on LED so fps can see fingerprint
   pinMode(lockPin1, OUTPUT);
   pinMode(lockPin2, OUTPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
 }
 
 
@@ -55,7 +58,7 @@ void lockUnlock(boolean lock){
 void LED(boolean color)
 {
   if (color){
-    digitalWrite(11,HIGH);
+    digitalWrite(11,HIGH);  
     digitalWrite(12,LOW);
     digitalWrite(13,LOW);
     delay(1000);
